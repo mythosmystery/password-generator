@@ -34,3 +34,7 @@ THEN the password is either displayed in an alert or written to the page
 The following image shows the web application's appearance and functionality:
 
 ![The Password Generator application displays a red button to "Generate Password".](assets/images/03-javascript-homework-demo.png)
+
+## My Work
+
+I accomplished the goals set out by the assignment using mostly HTML and JS. I have created a form for the user to enter the criteria they desire for the password. When the user clicks the generate password button all of the data in the form is validated. If anything is invalid an error message will appear on the form and let the user reenter it. Once this is done the criteria that were selected are passed to my function that generates the random password based on that. I used the Math.random function in JS to get random characters from an array of strings containing all the characters to be used in the password. 
