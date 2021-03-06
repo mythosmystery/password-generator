@@ -20,6 +20,8 @@ function writePassword() {
 
   var userCharTypes = getCharacterTypes();
 
+  form.querySelector("#error").hidden = true; 
+
   var passwordLength = getLength();  
 
   var validCharTypes = validateCharTypes(userCharTypes);
