@@ -11,11 +11,8 @@ var generateBtn = document.querySelector("#generate");
 var card = document.querySelector("card-body");
 
 // Write password to the #password input
-function writePassword() {
-  var textInput = document.querySelector(".password-criteria");
-  var passwordText = document.querySelector("#password");
-
-  textInput.setAttribute("type", "text");
+function writePassword() {  
+  var passwordText = document.querySelector("#password");  
 
   var passwordLength = 20;
   var userCharTypes = [true, true, true, false];
