@@ -10,12 +10,17 @@ var generateBtn = document.querySelector("#generate");
 
 var card = document.querySelector("card-body");
 
+var form = document.querySelector("#input-form");
+
+var checkboxes = form.querySelectorAll("input[type=checkbox]");
+
 // Write password to the #password input
 function writePassword() {  
   var passwordText = document.querySelector("#password");  
 
-  var passwordLength = 20;
-  var userCharTypes = [true, true, true, false];
+  var userCharTypes = getCharacterTypes();
+
+  var passwordLength = getLength();  
 
   var validCharTypes = validateCharTypes(userCharTypes);
 
@@ -27,6 +32,24 @@ function writePassword() {
 
 generateBtn.addEventListener("click", writePassword);
 
+function getLength(){
+  var userLength = form.querySelector("#password-length").value;
+  if(userLength > MAX_CHARS || userLength < MIN_CHARS){
+    form.querySelector("#length-error").setAttribute("style", "color:red");
+    getLength();
+  }
+  form.querySelector("#length-error").setAttribute("style", "color:black");
+  return userLength;
+}
+
+function getCharacterTypes(){  
+  var checked = [];
+  for (let i = 0; i < checkboxes.length; i++) {
+    checked[i] = checkboxes[i].checked;       
+  }
+  return checked;
+}
+
 function validateCharTypes(userCharTypes){
   var numFalse = 0;
 
@@ -35,8 +58,9 @@ function validateCharTypes(userCharTypes){
   }  
 
   if(numFalse === userCharTypes.length){
-    console.error("ALL VALUES FALSE");
-    console.error("INCLUDING LOWERCASE CHARACTERS")
+    console.error("ALL VALUES FALSE");    
+    form.querySelector("#error").hidden = false;   
+    checkboxes[LOWER].checked = true;
     userCharTypes[LOWER] = true;
     return userCharTypes;     
   }

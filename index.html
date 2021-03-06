@@ -17,6 +17,17 @@
           <h2>Generate a Password</h2>
         </div>
         <div class="card-body">
+          <form id="input-form">
+            <h3>Choose which types of characters to include in the password</h3>
+            <p style="color:red" id="error" hidden>ERROR: At least one checkbox must be selected</p>
+            <p><input type="checkbox" value="lowercase" checked>Lowercase</p>
+            <p><input type="checkbox" value="uppercase">Uppercase</p>
+            <p><input type="checkbox" value="numbers">Numbers</p>
+            <p><input type="checkbox" value="special">Special Characters</p>
+            <h3>Enter the desired length for the password</h3><p id="length-error">(Must be between 8 and 128 characters)</p>
+            <input type="number" id="password-length">
+            <!-- <p><input type="submit" value="submit"></p>   -->
+          </form>
           <textarea   
             readonly         
             id="password"
@@ -25,8 +36,7 @@
           ></textarea>                   
         </div>
         <div class="card-footer">
-          <button id="generate" class="btn">Generate Password</button>
-          
+          <button id="generate" class="btn">Generate Password</button>          
         </div>
       </div>
     </div>
