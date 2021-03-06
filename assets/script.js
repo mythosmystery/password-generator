@@ -35,17 +35,21 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function getLength(){
+
   var userLength = form.querySelector("#password-length").value;
+
   if(userLength > MAX_CHARS || userLength < MIN_CHARS){
     form.querySelector("#length-error").setAttribute("style", "color:red");
     getLength();
   }
+
   form.querySelector("#length-error").setAttribute("style", "color:black");
   return userLength;
 }
 
 function getCharacterTypes(){  
   var checked = [];
+  
   for (let i = 0; i < checkboxes.length; i++) {
     checked[i] = checkboxes[i].checked;       
   }

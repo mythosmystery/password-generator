@@ -119,6 +119,7 @@ button[disabled] {
 }
 #input-form{  
   text-align: center;
+  padding-bottom: 10px;
 }
 #password-length{
   width: 60%;
