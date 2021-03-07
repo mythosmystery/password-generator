@@ -117,6 +117,8 @@ button[disabled] {
   resize: none;
   overflow: hidden;
 }
+
+/* just a little formatting */
 #input-form{  
   text-align: center;
   padding-bottom: 10px;
